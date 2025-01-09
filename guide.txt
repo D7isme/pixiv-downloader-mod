@@ -1,6 +1,0 @@
-license_new.js
-op.js
-
-
-no_licence 
-popup_no_licence
