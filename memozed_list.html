@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pixiv Downloader option</title>
+<link rel="stylesheet" href="op.css" type="text/css" />
+<link rel="stylesheet" href="memozed_list.css" type="text/css" />
+<script type="text/javascript" src="jq.js"></script>
+<script type="text/javascript" src="locales.js"></script>
+<script type="text/javascript" src="memozed_list.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="main">
+    
+    	<img src="logo.png" width="568" height="70" alt="Pixiv downloader" class="logo" /><span id="version"></span><br />
+    
+        <b>・使い方</b><br><p style="color:#555;margin-left:12px;">
+        このリストにPixivIDと文字列を登録すると、その作者のイラストをダウンロードした際に?memoized-name?タグが登録した文章に置換されます。<br></p>
+        <b>・PixivIDの確認方法</b><br><p style="color:#555;margin-left:12px;">
+        登録したいユーザーのトップページにアクセスし、https://www.pixiv.net/users/<span style="color:red;">01234567</span>の<span style="color:red;">01234567</span>の部分を、PixivIDの欄に入力します。<br></p><hr>    
+    
+    
+        <p style="color:#555;margin-left:12px;">
+    	PixivID:
+        <input type="text" name="pid" id="pid"><br>
+        置換後の文字列(タグも使用可能です):
+        <input type="text" name="ptxt" id="ptxt">
+        <input type="submit" id="subm" value="登録" >
+        </p>
+        <div id="list-view">
+
+        </div>
+
+        <p style="color:#555;background: #f9f9f9;padding: 10px;margin-right: 10px;margin-top:20px;">
+            登録されていないIDの場合に置換する文字列:<input type="text" name="deftxt" id="deftxt"><input type="submit" id="save" value="保存" >
+         </p>
+
+    </div>
+
+</div>
+</body>
+</html>

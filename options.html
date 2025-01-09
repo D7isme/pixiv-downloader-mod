@@ -1,0 +1,2020 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pixiv Downloader option</title>
+    <link rel="stylesheet" href="op.css" type="text/css" />
+    <script type="text/javascript" src="jq.js"></script>
+    <script type="text/javascript" src="sl.js"></script>
+    <script type="text/javascript" src="op.js"></script>
+    <script type="text/javascript" src="locales.js"></script>
+    <!--<script type="text/javascript" src="license.js"></script>-->
+    <script type="text/javascript" src="license_new.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="main">
+        <img
+          src="logo.png"
+          width="568"
+          height="70"
+          alt="Pixiv downloader"
+          class="logo"
+        /><span id="version"></span><br />
+        <div id="renraku"></div>
+
+        <!-------->
+        <a name="freadme" id="freadme"></a>
+        <div id="freadme_show">
+          <div
+            style="
+              border: 2px solid #ccc;
+              padding: 5px;
+              border-radius: 10px;
+              width: calc(100% - 27px);
+              margin-bottom: 10px;
+            "
+          >
+            ・<a href="#" id="top_bug_report" target="_blank"
+              >不具合を報告(Bug reports)<br
+            /></a>
+          </div>
+        </div>
+        <div id="hyoka_mes"></div>
+        <!-------->
+
+        <div id="box1">
+          <div class="tbig">
+            <strong locales="filename">ダウンロードするファイル名 </strong
+            ><!--<a href="http://">[使用例表示]</a>--><br />
+          </div>
+          <textarea
+            name="file_name"
+            class="text_input"
+            id="file_name"
+          ></textarea>
+          <div class="sample">サンプル：</div>
+
+          <div class="select_container">
+            <div class="select_back" locales_title="select_title">?title?</div>
+            <div class="select_back" locales_title="select_member_id">
+              ?member-id?
+            </div>
+            <div class="select_back" locales_title="select_member_name">
+              ?member-name?
+            </div>
+            <div class="select_back" locales_title="select_memoized_name">
+              ?memoized-name?
+            </div>
+            <div class="select_back" locales_title="select_tags">?tags?</div>
+            <div class="select_back" locales_title="select_short_tags">
+              ?short-tags?
+            </div>
+            <div class="select_back" locales_title="select_tools">?tools?</div>
+            <div class="select_back" locales_title="select_pixiv_id">
+              ?pixiv-id?
+            </div>
+            <div class="select_back" locales_title="select_series">
+              ?series?
+            </div>
+            <div class="select_back" locales_title="select_series_id">
+              ?series-id?
+            </div>
+            <div class="select_back" locales_title="select_series_no">
+              ?series-no?
+            </div>
+          </div>
+
+          <div class="select_container">
+            <div class="select_back" locales_title="select_illust_id">
+              ?illust-id?
+            </div>
+            <div class="select_back" locales_title="select_illust_year">
+              ?illust-year?
+            </div>
+            <div class="select_back" locales_title="select_illust_month">
+              ?illust-month?
+            </div>
+            <div class="select_back" locales_title="select_illust_day">
+              ?illust-day?
+            </div>
+            <div class="select_back" locales_title="select_illust_hour">
+              ?illust-hour?
+            </div>
+            <div class="select_back" locales_title="select_illust_minute">
+              ?illust-minute?
+            </div>
+            <div class="select_back" locales_title="select_illust_second">
+              ?illust-second?
+            </div>
+            <div class="select_back" locales_title="select_illust_month_p">
+              ?illust-month-p?
+            </div>
+            <div class="select_back" locales_title="select_illust_day_p">
+              ?illust-day-p?
+            </div>
+            <div class="select_back" locales_title="select_illust_hour_p">
+              ?illust-hour-p?
+            </div>
+            <div class="select_back" locales_title="select_illust_minute_p">
+              ?illust-minute-p?
+            </div>
+            <div class="select_back" locales_title="select_illust_second_p">
+              ?illust-second-p?
+            </div>
+          </div>
+
+          <div class="select_container">
+            <div class="select_back" locales_title="select_saved_year">
+              ?saved-year?
+            </div>
+            <div class="select_back" locales_title="select_saved_month">
+              ?saved-month?
+            </div>
+            <div class="select_back" locales_title="select_saved_day">
+              ?saved-day?
+            </div>
+            <div class="select_back" locales_title="select_saved_hour">
+              ?saved-hour?
+            </div>
+            <div class="select_back" locales_title="select_saved_minute">
+              ?saved-minute?
+            </div>
+            <div class="select_back" locales_title="select_second">
+              ?saved-second?
+            </div>
+            <div class="select_back" locales_title="select_saved_week">
+              ?saved-week?
+            </div>
+            <div class="select_back" locales_title="select_saved_month_p">
+              ?saved-month-p?
+            </div>
+            <div class="select_back" locales_title="select_saved_day_p">
+              ?saved-day-p?
+            </div>
+            <div class="select_back" locales_title="select_saved_hour_p">
+              ?saved-hour-p?
+            </div>
+            <div class="select_back" locales_title="select_saved_minute_p">
+              ?saved-minute-p?
+            </div>
+            <div class="select_back" locales_title="select_second_p">
+              ?saved-second-p?
+            </div>
+          </div>
+
+          <div class="select_container">
+            <div class="select_back" locales_title="select_page_zeroformat">
+              ?page-zeroformat?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_page_zeroformat_original"
+            >
+              ?page-zeroformat-original?
+            </div>
+            <div class="select_back" locales_title="select_page">?page?</div>
+            <div class="select_back" locales_title="select_page_original">
+              ?page-original?
+            </div>
+            <div class="select_back" locales_title="select_page_all">
+              ?page-all?
+            </div>
+            <div class="select_back" locales_title="select_novel_page_all">
+              ?novel-page-all?
+            </div>
+            <div class="select_back" locales_title="select_novel_cnt">
+              ?novel-cnt?
+            </div>
+            <div class="select_back" locales_title="select_novel_wcnt">
+              ?novel-wcnt?
+            </div>
+            <div class="select_back" locales_title="select_novel_rtime_sec">
+              ?novel-rtime-sec?
+            </div>
+            <div class="select_back" locales_title="select_novel_rtime_min">
+              ?novel-rtime-min?
+            </div>
+          </div>
+
+          <div class="select_container">
+            <div
+              class="select_back"
+              locales_title="select_mozi"
+              locales="select_mozi_str"
+            >
+              ?[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_m"
+              locales="select_mozi_m_str"
+            >
+              ?m[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_u"
+              locales="select_mozi_u_str"
+            >
+              ?u[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_i"
+              locales="select_mozi_i_str"
+            >
+              ?i[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_n"
+              locales="select_mozi_n_str"
+            >
+              ?n[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_a"
+              locales="select_mozi_a_str"
+            >
+              ?a[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_r"
+              locales="select_mozi_r_str"
+            >
+              ?r[文字列]?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mozi_o"
+              locales="select_mozi_o_str"
+            >
+              ?o[文字列]?
+            </div>
+          </div>
+
+          <div class="select_container">
+            <div
+              class="select_back"
+              locales_title="select_suuzi"
+              locales="select_suuzi_str"
+            >
+              ?{数字,文字数}?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_rep"
+              locales="select_rep_str"
+            >
+              ?rep{'入力する文字列','検索する文字列','置換後の文字列'}?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_mat"
+              locales="select_mat_str"
+            >
+              ?mat{'チェックする文字列','検索する文字列','文字列が含まれていた場合','文字列が含んでいない場合'}?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_reg"
+              locales="select_reg_str"
+            >
+              ?reg{'置換する文字列','正規表現','置換後の文字列','オプション修飾子(空欄可)'}?
+            </div>
+            <div
+              class="select_back"
+              locales_title="select_regmat"
+              locales="select_regmat_str"
+            >
+              ?regmat{'チェックする文字列','正規表現','文字列が含まれていた場合','文字列が含んでいない場合','オプション修飾子(空欄可)'}?
+            </div>
+          </div>
+
+          <div class="clear"></div>
+
+          <div class="setsumei"></div>
+
+          <div style="display: none">
+            <span locales="hyoka" style="width: 96px; display: inline-block"
+              >評価で自動保存:</span
+            >
+            <select name="star" size="1" id="star">
+              <option value="0" locales="hyoka0">
+                評価をしても自動保存しない
+              </option>
+              <option value="1" locales="hyoka1">
+                評価を1点以上付けると自動保存
+              </option>
+              <option value="2" locales="hyoka2">
+                評価を2点以上付けると自動保存
+              </option>
+              <option value="3" locales="hyoka3">
+                評価を3点以上付けると自動保存
+              </option>
+              <option value="4" locales="hyoka4">
+                評価を4点以上付けると自動保存
+              </option>
+              <option value="5" locales="hyoka5">
+                評価を5点以上付けると自動保存
+              </option>
+              <option value="6" locales="hyoka6">
+                評価を6点以上付けると自動保存
+              </option>
+              <option value="7" locales="hyoka7">
+                評価を7点以上付けると自動保存
+              </option>
+              <option value="8" locales="hyoka8">
+                評価を8点以上付けると自動保存
+              </option>
+              <option value="9" locales="hyoka9">
+                評価を9点以上付けると自動保存
+              </option>
+              <option value="10" locales="hyoka10">
+                評価に満点を付けると自動保存
+              </option>
+            </select>
+          </div>
+
+          <div class="option">
+            <div class="ch_list">
+              <p class="sub_cat" locales="zenpan1">全般設定1</p>
+
+              <p>
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="dl_history"
+                    id="dl_history"
+                  /><span locales_next="dl_history"
+                    >ダウンロード履歴を記憶する(推奨)</span
+                  ></label
+                >
+              </p>
+              <p>
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="dl_history_erase"
+                    id="dl_history_erase"
+                  /><span locales_next="dl_history_erase"
+                    >DL履歴が多すぎる場合は古い順に削除(推奨)</span
+                  ></label
+                >
+              </p>
+              <p>
+                <label class="select_label"
+                  ><input type="checkbox" name="dl_alert" id="dl_alert" /><span
+                    locales_next="dl_alert"
+                    >保存済み画像は再保存時にｱﾗｰﾄを表示する</span
+                  ></label
+                >
+              </p>
+              <p>
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="dl_message"
+                    id="dl_message"
+                  /><span locales_next="dl_message"
+                    >保存済み画像を表示した時ﾒｯｾｰｼﾞを表示する</span
+                  ></label
+                >
+              </p>
+              <p>
+                <label class="select_label"
+                  ><input type="checkbox" name="big_img" id="big_img" /><span
+                    locales_next="big_img"
+                    >オリジナルサイズの漫画をDLする</span
+                  ></label
+                >
+              </p>
+              <p>
+                <label class="select_label"
+                  ><input type="checkbox" name="iine_dl" id="iine_dl" /><span
+                    locales_next="iine_dl"
+                    >いいねを押した時に自動的にダウンロード</span
+                  ></label
+                >
+              </p>
+              <p>
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="one_click_bm_dl"
+                    id="one_click_bm_dl"
+                  /><span locales_next="one_click_bm_dl"
+                    >ブックマーク時に自動的にダウンロード</span
+                  ></label
+                >
+              </p>
+
+              <div id="manga_free_container" style="display: none">
+                <p class="sub_cat" locales="manga_hozon_free">
+                  漫画の保存方法(フリー版)
+                </p>
+                <p style="margin-left: 5px">
+                  <span locales_next="def_dl_wait_l">ダウンロードのDL間隔</span
+                  >:<a href="#" id="def_dl_wait_free">?</a
+                  ><span locales_next="def_dl_wait_r">ミリ秒待つ</span
+                  ><a
+                    href="#"
+                    class="hint-pop"
+                    data-hint="漫画など複数枚ダウンロードされる処理が発生した際のダウンロード間隔をミリ秒で設定できます。\n\nYou can set the download interval in milliseconds for processes that involve downloading multiple pages, such as in the case of comics."
+                    >[?]</a
+                  >
+                </p>
+              </div>
+
+              <div id="illust_alert"></div>
+            </div>
+
+            <div class="ch_list">
+              <p class="sub_cat" locales="zenpan2">全般設定2</p>
+
+              <!--Pixivの仕様変更により廃止しました-->
+              <p style="display: none">
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="comment_open"
+                    id="comment_open"
+                  /><span locales_next="comment_open"
+                    >コメント欄を自動で開く</span
+                  ></label
+                >
+              </p>
+
+              <!--Pixivの仕様変更により廃止しました-->
+              <p style="display: none">
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="bookmark_disp"
+                    id="bookmark_disp"
+                  /><span locales_next="bookmark_disp"
+                    >イラストページでブックマーク数を表示</span
+                  ></label
+                >
+              </p>
+
+              <div class="p_block">
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="illust_popup"
+                    class="toggleOption"
+                    id="illust_popup"
+                  /><span locales_next="illust_popup"
+                    >オンマウスでサムネイルに拡大ボタンを表示</span
+                  ></label
+                >
+
+                <div class="hidden_contents">
+                  <div class="rule_l"></div>
+                  <span locales_next="illust_zoom_select">イラスト</span> :
+                  <select name="illust_zoom_select" id="illust_zoom_select">
+                    <option value="0" locales="illust_zoom_select0">
+                      拡大表示(高速)
+                    </option>
+                    <option value="1" locales="illust_zoom_select1">
+                      拡大表示(高画質)
+                    </option>
+                    <option value="2" locales="illust_zoom_select2">
+                      リンク先を表示
+                    </option>
+                  </select>
+
+                  <br />
+                  <div class="rule_l"></div>
+                  <span locales_next="ugoira_zoom_select"
+                    >うごイラ : リンク先を表示</span
+                  >
+                  <br />
+                  <div class="rule_l"></div>
+                  <span locales_next="manga_zoom_select">漫画</span> :
+                  <select name="manga_zoom_select" id="manga_zoom_select">
+                    <option value="0" locales="manga_zoom_select0">
+                      拡大表示(高速)
+                    </option>
+                    <option value="1" locales="manga_zoom_select1">
+                      拡大表示(高画質)
+                    </option>
+                    <option value="2" locales="manga_zoom_select2">
+                      リンク先を表示
+                    </option>
+                    <option value="3" locales="manga_zoom_select3">
+                      漫画を表示
+                    </option>
+                  </select>
+                  <br />
+                  <div class="rule_e"></div>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="illust_zoom_bm_win"
+                      id="illust_zoom_bm_win"
+                    /><span locales_next="illust_zoom_bm_win"
+                      >ブックマークをウィンドウで表示</span
+                    ></label
+                  >
+                </div>
+              </div>
+
+              <p style="display: none">
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="server_dl"
+                    id="server_dl"
+                    disabled
+                  /><s>サーバー経由でダウンロードする</s>(1.1.4.8廃止)</label
+                >
+              </p>
+
+              <div class="p_block">
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="dl_shortcut_on"
+                    class="toggleOption"
+                    id="dl_shortcut_on"
+                  /><span locales_next="dl_shortcut_on"
+                    >ダウンロードボタンのショートカット登録</span
+                  ></label
+                >
+                <div class="hidden_contents">
+                  <div class="rule_e"></div>
+                  <select name="dl_shortcut_key" id="dl_shortcut_key">
+                    <option value="ctrlKey">Ctrl</option>
+                    <option value="altKey">Alt</option>
+                    <option value="shiftKey">Shift</option>
+                    <option value="none">なし(none)</option>
+                  </select>
+                  +
+                  <select name="dl_shortcut_abc" id="dl_shortcut_abc">
+                    <option value="65">A</option>
+                    <option value="66">B</option>
+                    <option value="67">C</option>
+                    <option value="68">D</option>
+                    <option value="69">E</option>
+                    <option value="70">F</option>
+                    <option value="71">G</option>
+                    <option value="72">H</option>
+                    <option value="73">I</option>
+                    <option value="74">J</option>
+                    <option value="75">K</option>
+                    <option value="76">L</option>
+                    <option value="77">M</option>
+                    <option value="78">N</option>
+                    <option value="79">O</option>
+                    <option value="80">P</option>
+                    <option value="81">Q</option>
+                    <option value="82">R</option>
+                    <option value="83">S</option>
+                    <option value="84">T</option>
+                    <option value="85">U</option>
+                    <option value="86">V</option>
+                    <option value="87">W</option>
+                    <option value="88">X</option>
+                    <option value="89">Y</option>
+                    <option value="90">Z</option>
+                    <option value="48">0</option>
+                    <option value="49">1</option>
+                    <option value="50">2</option>
+                    <option value="51">3</option>
+                    <option value="52">4</option>
+                    <option value="53">5</option>
+                    <option value="54">6</option>
+                    <option value="55">7</option>
+                    <option value="56">8</option>
+                    <option value="57">9</option>
+                    <option value="8">BackSpace</option>
+                    <option value="9">Tab</option>
+                    <option value="13">Enter</option>
+                    <option value="19">PauseBreak</option>
+                    <option value="20">CapsLock</option>
+                    <option value="27">Esc</option>
+                    <option value="32">Space</option>
+                    <option value="33">PageUp</option>
+                    <option value="34">PageDown</option>
+                    <option value="35">End</option>
+                    <option value="36">Home</option>
+                    <option value="37">←</option>
+                    <option value="38">↑</option>
+                    <option value="39">→</option>
+                    <option value="40">↓</option>
+                    <option value="45">Insert</option>
+                    <option value="46">Delete</option>
+                    <option value="144">NumLock</option>
+                    <option value="145">ScrollLock</option>
+                    <option value="112">F1</option>
+                    <option value="113">F2</option>
+                    <option value="114">F3</option>
+                    <option value="115">F4</option>
+                    <option value="116">F5</option>
+                    <option value="117">F6</option>
+                    <option value="118">F7</option>
+                    <option value="119">F8</option>
+                    <option value="120">F9</option>
+                    <option value="121">F10</option>
+                    <option value="122">F11</option>
+                    <option value="123">F12</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="hozonzi_free_container" style="display: none">
+                <p class="sub_cat" locales="hozonzi_free">
+                  保存時の処理(フリー版)
+                </p>
+                <label class="select_label"
+                  ><input
+                    type="radio"
+                    name="free_download_mode"
+                    class="free_download_mode"
+                    value="0"
+                  /><span locales_next="free_download_mode_0"
+                    >ダウンローダーの保存機能を使用</span
+                  ></label
+                ><br />
+                <label class="select_label"
+                  ><input
+                    type="radio"
+                    name="free_download_mode"
+                    class="free_download_mode"
+                    value="1"
+                  /><span locales_next="free_download_mode_1"
+                    >ファイルの保存場所を毎回選択する</span
+                  ></label
+                ><br />
+                <label class="select_label"
+                  ><input
+                    type="radio"
+                    name="free_download_mode"
+                    class="free_download_mode"
+                    value="2"
+                  /><span locales_next="free_download_mode_2"
+                    >ブラウザ標準の保存機能を使用</span
+                  ></label
+                >
+              </div>
+
+              <p>
+                <label class="select_label"
+                  ><input
+                    type="checkbox"
+                    name="erase_emoji"
+                    id="erase_emoji"
+                  /><span locales_next="erase_emoji"
+                    >ファイル名から絵文字を除去する(テスト中)</span
+                  ></label
+                >
+              </p>
+
+              <span locales_next="select_language">拡張機能で使用する言語</span>
+              :
+              <select name="select_language" id="select_language">
+                <option value="default" locales="select_language0">
+                  ブラウザで指定した言語
+                </option>
+                <option value="ja" locales="select_language1">日本語</option>
+                <option value="en" locales="select_language2">英語</option>
+              </select>
+            </div>
+            <div class="clear"></div>
+
+            <hr
+              style="
+                border: none;
+                border-top: solid 2px #ccc;
+                padding-left: 10px;
+                margin-top: 20px;
+              "
+            />
+
+            <p style="margin-left: 16px; margin-bottom: -3px">
+              <a href="#" style="color: #000"
+                ><span class="link_label" locales="dl_rireki"
+                  >ダウンロード履歴を編集</span
+                ></a
+              >
+              <span class="link_label" locales="dl_rireki_clear"
+                >ダウンロード履歴を消去</span
+              >
+              <span class="link_label" locales="memoized_list" id="memozed_list"
+                >?memoized-name?の置換リストを編集</span
+              >
+            </p>
+
+            <hr
+              style="
+                border: none;
+                border-top: solid 2px #ccc;
+                padding-left: 10px;
+                margin-top: 10px;
+              "
+            />
+
+            <p style="margin-left: 16px; margin-bottom: 7px">
+              <button
+                class="link_label"
+                id="options_copy"
+                locales="options_copy"
+              >
+                設定データの保存
+              </button>
+              <button
+                class="link_label"
+                id="options_read_new"
+                locales="options_read_new"
+              >
+                設定データの読込・復元
+              </button>
+              <button
+                class="link_label"
+                id="options_read"
+                locales="options_read"
+              >
+                設定の読込(旧仕様)
+              </button>
+              <button class="link_label" id="reset" locales="reset">
+                設定の初期化
+              </button>
+            </p>
+
+            <div id="keikoku"></div>
+
+            <!--auth_box-->
+
+            <a name="license-jump" id="license-jump"></a>
+            <div id="license">
+              <b style="font-size: 17px" locales="new_license_main_label"
+                >- LICENSE AUTHENTICATION -</b
+              ><br />
+
+              <div id="auth_box">
+                <div id="auth_form" style="display: none">
+                  <br />
+
+                  <div locales="new_license_main_message">
+                    すべての機能を利用するにはライセンス購入が必要です。<br />
+                    ライセンスを購入しない場合も、基本的な機能は永続的にお使いいただけます。
+                  </div>
+
+                  <div id="paypal_form">
+                    <img
+                      src="license_loading.gif"
+                      style="margin: 25px auto; display: block; width: 30px"
+                    />
+                  </div>
+
+                  <div locales="new_license_procedure"></div>
+
+                  <br />
+
+                  <div
+                    id="auth_alert"
+                    style="
+                      display: none;
+                      font-weight: bold;
+                      text-align: center;
+                      font-size: 14px;
+                      color: #f00;
+                      border: 2px solid #f00;
+                      border-radius: 10px;
+                      background: #ffe0e0;
+                      padding: 10px;
+                      width: 500px;
+                      margin: auto;
+                      margin-bottom: 13px;
+                      line-height: 19px;
+                      margin-top: 13px;
+                    "
+                  ></div>
+
+                  <form id="auth_mailaddress_form" method="GET" action="#">
+                    <input
+                      type="text"
+                      id="auth_mailaddress"
+                      data-nosave="true"
+                      placeholder="ここにPaypalメールアドレスを入力"
+                      locales_placeholder="new_license_mailbox_placeholder"
+                      style="
+                        border: 2px solid #777;
+                        line-height: 30px;
+                        width: 300px;
+                        border-radius: 10px 0px 0px 10px;
+                        font-size: 14px;
+                        text-align: center;
+                        outline: none;
+                      "
+                    /><button
+                      type="submit"
+                      id="auth_mailaddress_submit"
+                      style="
+                        border: 2px solid #777;
+                        line-height: 30px;
+                        width: 100px;
+                        margin-left: -2px;
+                        border-radius: 0px 10px 10px 0px;
+                        font-size: 14px;
+                        outline: none;
+                      "
+                      locales="new_license_submit_button"
+                    >
+                      認証
+                    </button>
+                  </form>
+
+                  <br /><br />
+                </div>
+
+                <div id="auth_form_success" style="display: none"></div>
+
+                <div
+                  id="auth_loading"
+                  style="
+                    display: none;
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #0000ff;
+                    border: 2px solid #8292bf;
+                    border-radius: 10px;
+                    background: #dce3ff;
+                    padding: 10px;
+                    width: 500px;
+                    margin: auto;
+                    margin-bottom: 13px;
+                    line-height: 19px;
+                    margin-top: 13px;
+                  "
+                ></div>
+              </div>
+            </div>
+            <!--auth_box-->
+          </div>
+
+          <p></p>
+          <div class="footer-wrap">
+            <div class="footer-button-wrap">
+              <button class="save" locales="save">設定の保存</button>
+              <button class="next_setting" locales="next_setting">
+                次の設定へ
+              </button>
+              <!--<button class="reset" locales="reset">初期化</button>-->
+            </div>
+          </div>
+
+          <p></p>
+        </div>
+        <div id="box2">
+          <p locales="illust_rireki">
+            イラストダウンロード履歴の編集(保存されている番号は”illust_id=○○○”の部分です)
+          </p>
+          <textarea name="imgdata" id="imgdata"></textarea><br />
+          <div class="footer-wrap">
+            <div class="footer-button-wrap">
+              <button id="editout" locales="editout">保存して戻る</button>
+            </div>
+          </div>
+        </div>
+        <div id="box3">
+          <div id="expansion">
+            <div id="dir_pass">
+              <div class="tbig" style="float: left">
+                <strong locales="dirname">ダウンロードするディレクトリ</strong>
+              </div>
+              <span style="font-size: 10px" locales="dir_hint"
+                >・ブラウザで設定しているフォルダからの相対パスになります<br />・フォルダの区切りはスラッシュ(/)を使用して下さい</span
+              ><br />
+              <div style="font-size: 20px; width: 19px; display: inline-block">
+                ./
+              </div>
+              <textarea
+                name="dir_name"
+                class="text_input"
+                id="dir_name"
+              ></textarea>
+              <div
+                style="
+                  font-size: 20px;
+                  width: 19px;
+                  display: inline-block;
+                  text-align: center;
+                "
+              >
+                /
+              </div>
+
+              <div class="sample">サンプル：</div>
+
+              <div class="select_container">
+                <div class="select_back" locales_title="select_title">
+                  ?title?
+                </div>
+                <div class="select_back" locales_title="select_member_id">
+                  ?member-id?
+                </div>
+                <div class="select_back" locales_title="select_member_name">
+                  ?member-name?
+                </div>
+                <div class="select_back" locales_title="select_memoized_name">
+                  ?memoized-name?
+                </div>
+                <div class="select_back" locales_title="select_tags">
+                  ?tags?
+                </div>
+                <div class="select_back" locales_title="select_short_tags">
+                  ?short-tags?
+                </div>
+                <div class="select_back" locales_title="select_tools">
+                  ?tools?
+                </div>
+                <div class="select_back" locales_title="select_pixiv_id">
+                  ?pixiv-id?
+                </div>
+                <div class="select_back" locales_title="select_series">
+                  ?series?
+                </div>
+                <div class="select_back" locales_title="select_series_id">
+                  ?series-id?
+                </div>
+                <div class="select_back" locales_title="select_series_no">
+                  ?series-no?
+                </div>
+              </div>
+
+              <div class="select_container">
+                <div class="select_back" locales_title="select_illust_id">
+                  ?illust-id?
+                </div>
+                <div class="select_back" locales_title="select_illust_year">
+                  ?illust-year?
+                </div>
+                <div class="select_back" locales_title="select_illust_month">
+                  ?illust-month?
+                </div>
+                <div class="select_back" locales_title="select_illust_day">
+                  ?illust-day?
+                </div>
+                <div class="select_back" locales_title="select_illust_hour">
+                  ?illust-hour?
+                </div>
+                <div class="select_back" locales_title="select_illust_minute">
+                  ?illust-minute?
+                </div>
+                <div class="select_back" locales_title="select_illust_second">
+                  ?illust-second?
+                </div>
+                <div class="select_back" locales_title="select_illust_month_p">
+                  ?illust-month-p?
+                </div>
+                <div class="select_back" locales_title="select_illust_day_p">
+                  ?illust-day-p?
+                </div>
+                <div class="select_back" locales_title="select_illust_hour_p">
+                  ?illust-hour-p?
+                </div>
+                <div class="select_back" locales_title="select_illust_minute_p">
+                  ?illust-minute-p?
+                </div>
+                <div class="select_back" locales_title="select_illust_second_p">
+                  ?illust-second-p?
+                </div>
+              </div>
+
+              <div class="select_container">
+                <div class="select_back" locales_title="select_saved_year">
+                  ?saved-year?
+                </div>
+                <div class="select_back" locales_title="select_saved_month">
+                  ?saved-month?
+                </div>
+                <div class="select_back" locales_title="select_saved_day">
+                  ?saved-day?
+                </div>
+                <div class="select_back" locales_title="select_saved_hour">
+                  ?saved-hour?
+                </div>
+                <div class="select_back" locales_title="select_saved_minute">
+                  ?saved-minute?
+                </div>
+                <div class="select_back" locales_title="select_second">
+                  ?saved-second?
+                </div>
+                <div class="select_back" locales_title="select_saved_week">
+                  ?saved-week?
+                </div>
+                <div class="select_back" locales_title="select_saved_month_p">
+                  ?saved-month-p?
+                </div>
+                <div class="select_back" locales_title="select_saved_day_p">
+                  ?saved-day-p?
+                </div>
+                <div class="select_back" locales_title="select_saved_hour_p">
+                  ?saved-hour-p?
+                </div>
+                <div class="select_back" locales_title="select_saved_minute_p">
+                  ?saved-minute-p?
+                </div>
+                <div class="select_back" locales_title="select_second_p">
+                  ?saved-second-p?
+                </div>
+              </div>
+
+              <div class="select_container">
+                <div class="select_back" locales_title="select_page_zeroformat">
+                  ?page-zeroformat?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_page_zeroformat_original"
+                >
+                  ?page-zeroformat-original?
+                </div>
+                <div class="select_back" locales_title="select_page">
+                  ?page?
+                </div>
+                <div class="select_back" locales_title="select_page_original">
+                  ?page-original?
+                </div>
+                <div class="select_back" locales_title="select_page_all">
+                  ?page-all?
+                </div>
+                <div class="select_back" locales_title="select_novel_page_all">
+                  ?novel-page-all?
+                </div>
+                <div class="select_back" locales_title="select_novel_cnt">
+                  ?novel-cnt?
+                </div>
+                <div class="select_back" locales_title="select_novel_wcnt">
+                  ?novel-wcnt?
+                </div>
+                <div class="select_back" locales_title="select_novel_rtime_sec">
+                  ?novel-rtime-sec?
+                </div>
+                <div class="select_back" locales_title="select_novel_rtime_min">
+                  ?novel-rtime-min?
+                </div>
+              </div>
+
+              <div class="select_container">
+                <div
+                  class="select_back"
+                  locales_title="select_mozi"
+                  locales="select_mozi_str"
+                >
+                  ?[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_m"
+                  locales="select_mozi_m_str"
+                >
+                  ?m[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_u"
+                  locales="select_mozi_u_str"
+                >
+                  ?u[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_i"
+                  locales="select_mozi_i_str"
+                >
+                  ?i[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_n"
+                  locales="select_mozi_n_str"
+                >
+                  ?n[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_a"
+                  locales="select_mozi_a_str"
+                >
+                  ?a[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_r"
+                  locales="select_mozi_r_str"
+                >
+                  ?r[文字列]?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mozi_o"
+                  locales="select_mozi_o_str"
+                >
+                  ?o[文字列]?
+                </div>
+              </div>
+
+              <div class="select_container">
+                <div
+                  class="select_back"
+                  locales_title="select_suuzi"
+                  locales="select_suuzi_str"
+                >
+                  ?{数字,文字数}?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_rep"
+                  locales="select_rep_str"
+                >
+                  ?rep{'入力する文字列','検索する文字列','置換後の文字列'}?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_mat"
+                  locales="select_mat_str"
+                >
+                  ?mat{'チェックする文字列','検索する文字列','文字列が含まれていた場合','文字列が含んでいない場合'}?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_reg"
+                  locales="select_reg_str"
+                >
+                  ?reg{'置換する文字列','正規表現','置換後の文字列','オプション修飾子(空欄可)'}?
+                </div>
+                <div
+                  class="select_back"
+                  locales_title="select_regmat"
+                  locales="select_regmat_str"
+                >
+                  ?regmat{'チェックする文字列','正規表現','文字列が含まれていた場合','文字列が含んでいない場合','オプション修飾子(空欄可)'}?
+                </div>
+              </div>
+
+              <div class="clear"></div>
+
+              <div class="setsumei"></div>
+            </div>
+
+            <div id="option_list2" class="option">
+              <div class="ch_list">
+                <p class="sub_cat" locales="hozonzi">保存時の処理</p>
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_select"
+                      class="dl_select"
+                      value="0"
+                    /><span locales_next="dl_select_0"
+                      >設定に従ってフォルダへ保存する</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_select"
+                      class="dl_select"
+                      value="1"
+                    /><span locales_next="dl_select_1"
+                      >ファイルの保存場所を毎回選択する</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_select"
+                      class="dl_select"
+                      value="2"
+                    /><span locales_next="dl_select_2"
+                      >ブラウザ標準の保存設定を利用</span
+                    ></label
+                  >
+                  <!--<label class="select_label"><input type="radio" name="dl_select" class="dl_select" value="2" /><span locales_next="dl_select_2">ブラウザ標準の保存機能を使用</span></label>-->
+                </p>
+                <p style="font-weight: bold" locales="sudeni">
+                  既にファイルが存在した時の処理
+                </p>
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="file_overwrite"
+                      class="file_overwrite"
+                      value="0"
+                    /><span locales_next="file_overwrite_0"
+                      >保存ダイアログを表示する</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="file_overwrite"
+                      class="file_overwrite"
+                      value="1"
+                    /><span locales_next="file_overwrite_1"
+                      >上書きしないよう数字を追加して保存する</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="file_overwrite"
+                      class="file_overwrite"
+                      value="2"
+                    /><span locales_next="file_overwrite_2"
+                      >上書き保存する</span
+                    ></label
+                  >
+                </p>
+                <p class="sub_cat" locales="syosetu_hozon">小説の保存方法</p>
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_ext"
+                      class="novel_ext"
+                      value="0"
+                    /><span locales_next="novel_ext_0"
+                      >挿絵がある場合のみHTML形式で保存</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_ext"
+                      class="novel_ext"
+                      value="1"
+                    /><span locales_next="novel_ext_1"
+                      >HTML形式で保存</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_ext"
+                      class="novel_ext"
+                      value="2"
+                    /><span locales_next="novel_ext_2"
+                      >テキスト形式で保存</span
+                    ></label
+                  ><br />
+                </p>
+                <p style="font-weight: bold" locales="hyosi">表紙の保存</p>
+                <div>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_top"
+                      class="novel_top"
+                      value="0"
+                    /><span locales_next="novel_top_0"
+                      >表紙をHTML内に含める(HTML形式のみ)</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <label class="select_label"
+                      ><input
+                        type="checkbox"
+                        name="novel_txtimg"
+                        id="novel_txtimg"
+                      /><span locales_next="novel_txtimg"
+                        >テキスト形式の場合は別ファイルで保存</span
+                      ></label
+                    >
+                  </div>
+                  <br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_top"
+                      class="novel_top"
+                      value="1"
+                    /><span locales_next="novel_top_1"
+                      >表紙を別ファイルで保存</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_top"
+                      class="novel_top"
+                      value="2"
+                    /><span locales_next="novel_top_2"
+                      >表紙を保存しない</span
+                    ></label
+                  ><br />
+                </div>
+                <p style="font-weight: bold" locales="sasie_hozon">
+                  挿絵の保存
+                </p>
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_dl"
+                      class="novel_dl"
+                      value="0"
+                    /><span locales_next="novel_dl_0"
+                      >挿絵をHTML内に含める(HTML形式のみ)</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_dl"
+                      class="novel_dl"
+                      value="1"
+                    /><span locales_next="novel_dl_1"
+                      >挿絵を別ファイルで保存</span
+                    ></label
+                  ><br />
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="novel_dl"
+                      class="novel_dl"
+                      value="2"
+                    /><span locales_next="novel_dl_2"
+                      >挿絵を保存しない</span
+                    ></label
+                  ><br />
+                </p>
+
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="novel_def"
+                      id="novel_def"
+                    /><span locales_next="novel_def"
+                      >デフォルトの表紙の場合はダウンロードしない</span
+                    ></label
+                  ><br />
+                </p>
+
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="novel_tag"
+                      id="novel_tag"
+                    /><span locales_next="novel_tag"
+                      >使用しない特殊タグを消去する</span
+                    ></label
+                  ><br />
+                </p>
+
+                <div>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="novel_captionDL"
+                      class="toggleOption"
+                      id="novel_captionDL"
+                    /><span locales_next="novel_captionDL"
+                      >小説に情報を書き込む</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <div style="display: inline-block; width: 300px">
+                      ヘッダー(先頭に書き込み)：<br />
+                      <textarea
+                        id="novel_captionTxt"
+                        style="width: 100%; height: 80px; resize: vertical"
+                      ></textarea
+                      ><br />
+                      フッター(末尾に書き込み)
+                      <textarea
+                        id="novel_captionTxtAfter"
+                        style="width: 100%; height: 80px; resize: vertical"
+                      ></textarea
+                      ><br />
+                      <span
+                        style="color: #f00; font-size: 10px"
+                        locales="tokusyu"
+                      >
+                        --特殊置換文字一覧--<br />
+                        ?caption?:キャプション<br />
+                        ?caption-html?:HTMLタグ付きキャプション<br />
+                        ?comment?:コメント<br />
+                        ?comment-rep?:コメント(返信を含める)<br />
+                        ?comment-csv?:コメント(CSV形式)<br />
+                        ?comment-repcsv?:コメント(返信を含める)(CSV形式)<br />
+                        ファイル名に使用できる?タグ全て使用可能
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <br />
+              </div>
+              <div class="ch_list">
+                <p class="sub_cat" locales="manga_hozon">漫画の保存方法</p>
+                <div>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="manga_select"
+                      class="manga_select"
+                      value="0"
+                    /><span locales_next="manga_select_0"
+                      >漫画を圧縮せずにそのまま保存する</span
+                    ></label
+                  >
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="manga_select"
+                      class="manga_select"
+                      value="1"
+                    /><span locales_next="manga_select_1"
+                      >漫画をZIPで圧縮して保存する</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <label class="select_label"
+                      ><input
+                        type="checkbox"
+                        name="manga_sjis"
+                        id="manga_sjis"
+                      /><span locales_next="manga_sjis"
+                        >ファイル名の文字コードをSJISにする</span
+                      ></label
+                    ><br />
+                    <span style="color: #f00; font-size: 10px">
+                      ※ZIPファイル解凍時に文字化けが発生する場合はチェックしてください</span
+                    >
+                  </div>
+
+                  <div class="p_block">
+                    <p>
+                      <span locales_next="def_dl_wait_l_not_zip"
+                        >ダウンロードの間隔</span
+                      >:<input
+                        type="number"
+                        id="def_dl_wait"
+                        style="width: 55px"
+                      /><span locales_next="def_dl_wait_r">ミリ秒待つ</span
+                      ><a
+                        href="#"
+                        class="hint-pop"
+                        data-hint="漫画など複数枚ダウンロードされる処理が発生した際のダウンロード間隔をミリ秒で設定できます。\n\nYou can set the download interval in milliseconds for processes that involve downloading multiple pages, such as in the case of comics."
+                        >[?]</a
+                      >
+                    </p>
+
+                    <label class="select_label"
+                      ><input
+                        type="checkbox"
+                        name="manga_renban"
+                        class="toggleOption"
+                        id="manga_renban"
+                      /><span locales_next="manga_renban"
+                        >ファイル名をページ番号にする（例: 0.jpg, 1.jpg,
+                        2.jpg...）</span
+                      ></label
+                    >
+                    <div class="hidden_contents">
+                      <div class="rule_e"></div>
+                      <label class="select_label"
+                        ><input
+                          type="checkbox"
+                          name="manga_st_one"
+                          id="manga_st_one"
+                        /><span locales_next="manga_st_one"
+                          >連番を1から開始する（例: 1.jpg, 2.jpg,
+                          3.jpg...）</span
+                        ></label
+                      >
+                    </div>
+                  </div>
+
+                  <p>
+                    <a href="#" id="hint" locales="hint"
+                      >漫画を別フォルダにまとめて保存するには</a
+                    >
+                  </p>
+                </div>
+
+                <p class="sub_cat" locales="ugoira_hozon">
+                  うごくイラストの保存方法
+                </p>
+                <div>
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="0"
+                    /><span locales_next="dl_ugoira_0"
+                      >ZIPデータをそのまま保存</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <span style="color: #f00; font-size: 10px" locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="1"
+                    /><span locales_next="dl_ugoira_1"
+                      >画像を１コマずつ保存</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <span style="color: #f00; font-size: 10px" locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="2"
+                    /><span locales_next="dl_ugoira_2"
+                      >専用プレイヤで再生可能なZIPを保存</span
+                    ><span style="color: #00f; font-size: 10px"
+                      ><span locales_next="ugoira_type_recommended">
+                        ※おすすめ設定</span
+                      ></span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <button id="player_dl" locales="player_dl">
+                      うごくイラストプレイヤーをダウンロード</button
+                    ><br />
+                    <br /><span
+                      style="color: #f00; font-size: 10px"
+                      locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="3"
+                    /><span locales_next="dl_ugoira_3"
+                      >単体再生可能なHTMLファイルを保存</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <span style="color: #f00; font-size: 10px" locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="4"
+                    /><span locales_next="dl_ugoira_4"
+                      >動画形式(.avi)で保存</span
+                    ><span style="color: #00f; font-size: 10px"
+                      ><span locales_next="ugoira_type_recommended">
+                        ※おすすめ設定</span
+                      ></span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <label class="select_label"
+                      ><input
+                        type="checkbox"
+                        name="avi_ecomode"
+                        id="avi_ecomode"
+                      /><span locales_next="avi_ecomode"
+                        >フレームレートを削減する</span
+                      ></label
+                    >
+                    <br /><span
+                      style="color: #f00; font-size: 10px"
+                      locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="5"
+                    /><span locales_next="dl_ugoira_5"
+                      >GIFアニメ形式(.gif)で保存</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_l"></div>
+                    <input
+                      type="text"
+                      id="gif_resize"
+                      style="width: 50px"
+                      title="100%と入力するとそのままのサイズで保存できます"
+                    />にリサイズする(%かpxで指定) <br />
+                    <div class="rule_l"></div>
+                    品質:<input
+                      type="number"
+                      id="gif_quality"
+                      style="width: 35px"
+                      min="1"
+                      max="20"
+                    />(1～20で指定) <br />
+                    <div class="rule_e"></div>
+                    スレッド数:<input
+                      type="number"
+                      id="gif_thread"
+                      style="width: 35px"
+                      min="1"
+                      max="10"
+                    />(1～10で指定) <br /><span
+                      style="color: #f00; font-size: 10px"
+                    >
+                      品質：1が最も高品質ですが作成に時間がかかります<br />
+                      スレッド数：同時に処理する画像枚数です。増やし過ぎると処理が重くなります。<br />
+                      リサイズ：100%と入力するとそのままのサイズで保存できます<br />
+                      <b
+                        >■色がおかしくなる場合はリサイズの値を変更すると改善する可能性があります</b
+                      ></span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="6"
+                    /><span locales_next="dl_ugoira_6"
+                      >APNG画像形式(.png)で保存</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_l"></div>
+                    <input
+                      type="text"
+                      id="apng_resize"
+                      style="width: 50px"
+                      title="100%と入力するとそのままのサイズで保存できます"
+                    />にリサイズする(%かpxで指定) <br />
+                    <div class="rule_e"></div>
+                    <button id="apng_readme">このファイルを再生する方法</button
+                    ><br /><span style="color: #f00; font-size: 10px"
+                      >100%と入力するとそのままのサイズで保存できます</span
+                    >
+                    <br /><span
+                      style="color: #f00; font-size: 10px"
+                      locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="7"
+                    /><span locales_next="dl_ugoira_7"
+                      >XNG画像形式(.svg、.xng)で保存</span
+                    ><span style="color: #00f; font-size: 10px"
+                      ><span locales_next="ugoira_type_recommended">
+                        ※おすすめ設定</span
+                      ></span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_l"></div>
+                    拡張子<label class="select_label"
+                      ><input
+                        type="radio"
+                        name="xng_ext"
+                        class="xng_ext"
+                        value="0"
+                      />.svg</label
+                    >
+                    <label class="select_label">
+                      <input
+                        type="radio"
+                        name="xng_ext"
+                        class="xng_ext"
+                        value="1"
+                      />.xng</label
+                    >
+                    <br />
+                    <div class="rule_e"></div>
+                    <button id="xng_readme">このファイルを再生する方法</button>
+                    <br /><span
+                      style="color: #f00; font-size: 10px"
+                      locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="8"
+                    /><span locales_next="dl_ugoira_8"
+                      >WebM形式(.webm)で保存</span
+                    ></label
+                  ><br />
+
+                  <label class="select_label"
+                    ><input
+                      type="radio"
+                      name="dl_ugoira"
+                      class="dl_ugoira"
+                      value="9"
+                    /><span locales_next="dl_ugoira_9">MP4形式(.mp4)で保存</span
+                    ><span style="color: #00f; font-size: 10px"
+                      ><span locales_next="ugoira_type_recommended">
+                        ※おすすめ設定</span
+                      ></span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <span style="color: #f00; font-size: 10px" locales="murekka"
+                      >この形式は無劣化で保存が可能です</span
+                    >
+                  </div>
+                  <br />
+
+                  <!--<label class="select_label"><input type="radio" name="dl_ugoira" class="dl_ugoira" value="10" /><span locales_next="dl_ugoira_10">カスタムして保存（FFMPEGを使用）</span></label>
+    <div class="hidden_contents">
+    <div class="rule_s">
+    FFMPEGエンコーダーにコマンドを送信して、うごイラをエンコードできます。<br>
+    <br>
+    コマンド：<br>
+    <textarea id="ffmpegCmd" style="width: calc(100% - 20px);height:80px;resize:vertical;"></textarea><br>
+    <br>
+    コマンド入力例：<br>
+	・GIF形式に変換: "-f concat -i input.txt -plays 0 output.gif"<br>
+	・APNG形式に変換: "-f concat -i input.txt -plays 0 output.apng"<br>
+	・WebM形式に変換: "-f concat -i input.txt -safe 0 output.webm"<br>
+	・MP4形式に変換: "-f concat -i input.txt -safe 0 -c copy output.mp4"<br>
+	</div>
+    </div><br>
+    -->
+                </div>
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="full_ugoira"
+                      id="full_ugoira"
+                    /><span locales_next="full_ugoira"
+                      >原寸大のうごくイラストをダウンロード</span
+                    ></label
+                  >
+                </p>
+
+                <p class="sub_cat" locales="sonohoka">その他の設定</p>
+
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="oneclick_dl"
+                      id="oneclick_dl"
+                    /><span locales_next="oneclick_dl"
+                      >サムネイルにワンクリックダウンロードボタンを追加</span
+                    ></label
+                  >
+                </p>
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="illust_downloaded"
+                      id="illust_downloaded"
+                    /><span locales_next="illust_downloaded"
+                      >DL済イラストのサムネイルを強調</span
+                    ></label
+                  >
+                </p>
+                <div>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="captionDL"
+                      class="toggleOption"
+                      id="captionDL"
+                    /><span locales_next="captionDL"
+                      >イラストの情報(キャプション等)をテキストファイルに保存</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <div style="display: inline-block; width: 300px">
+                      ファイル名(末尾に追加されます)：<br /><input
+                        type="text"
+                        id="captionFileName"
+                        style="width: 250px"
+                      />.txt<br />テキスト：<br />
+                      <textarea
+                        id="captionTxt"
+                        style="width: 100%; height: 80px; resize: vertical"
+                      ></textarea
+                      ><br />
+                      <span
+                        style="color: #f00; font-size: 10px"
+                        locales="tokusyu"
+                      >
+                        --特殊置換文字一覧--<br />
+                        ?caption?:キャプション<br />
+                        ?caption-html?:HTMLタグ付きキャプション<br />
+                        ?comment?:コメント<br />
+                        ?comment-rep?:コメント(返信を含める)<br />
+                        ?comment-csv?:コメント(CSV形式)<br />
+                        ?comment-repcsv?:コメント(返信を含める)(CSV形式)<br />
+                        ファイル名に使用できる?タグ全て使用可能
+                      </span>
+                      <p>
+                        <label class="select_label"
+                          ><input
+                            type="checkbox"
+                            name="captionDLZIP"
+                            id="captionDLZIP"
+                          /><span locales_next="captionDLZIP"
+                            >漫画の場合、ファイルをZIPに格納する</span
+                          ></label
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <p></p>
+
+                <div>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="syncPC"
+                      class="toggleOption"
+                      id="syncPC"
+                    /><span locales_next="syncPC"
+                      >他のPCとダウンロード履歴を同期する</span
+                    ></label
+                  >
+                  <div class="hidden_contents">
+                    <div class="rule_e"></div>
+                    <div style="display: inline-block; width: 330px">
+                      SyncID：<input
+                        type="text"
+                        id="syncId"
+                        style="
+                          width: 200px;
+                          font-size: 14px;
+                          line-height: 14px;
+                          font-weight: bold;
+                          color: #f00;
+                        "
+                        placeholder="ここにSyncIDを入力"
+                      /><br /><span style="color: #f00"
+                        >*このSyncIDを同期したい別のブラウザのSyncIDの欄に上書きして下さい</span
+                      >
+                      <a href="sync_setting.html" target="_blank"
+                        ><span locales_next="sync_readme"
+                          >詳しい設定方法はこちら</span
+                        ></a
+                      ><br /><br /><!--Click here for advanced setting method-->
+                      <span
+                        style="
+                          color: #00a700;
+                          font-size: 14px;
+                          font-weight: bold;
+                        "
+                        class="blinking"
+                        >●同期が有効になっています</span
+                      ><br />
+                      LastUpdate：<span id="lastSyncTime"></span><br /><br />
+
+                      <a href="#" id="sync_force_button">いますぐ同期する</a
+                      ><br />
+                      <a href="#" id="sync_reset_button"
+                        >同期データを初期化する</a
+                      ><br />
+                      <a href="#" id="sync_idcl_button">SyncIDを再発行する</a
+                      ><br />
+
+                      <br />
+                      【注意事項】<br />
+                      ・最短1時間毎に自動的に同期が行われます。<br />
+                      ・差分同期の為、同期を有効にする前のダウンロード履歴は同期されません。<br />
+                      ・同期を使用しない場合はオフにしてください。<br />
+                    </div>
+                  </div>
+                </div>
+
+                <p>
+                  <label class="select_label"
+                    ><input
+                      type="checkbox"
+                      name="alldl_errskip"
+                      id="alldl_errskip"
+                    /><span locales_next="alldl_errskip"
+                      >一括ダウンロード中にダウンロードが失敗した際も処理を継続</span
+                    ></label
+                  >
+                </p>
+
+                <p style="margin-left: 5px">
+                  <span locales_next="auto_dl_wait_l"
+                    >一括ダウンロード時のDL間隔</span
+                  >:<input
+                    type="number"
+                    id="auto_dl_wait"
+                    style="width: 55px"
+                  /><span locales_next="auto_dl_wait_r">ミリ秒待つ</span
+                  ><a
+                    href="#"
+                    class="hint-pop"
+                    data-hint="一括ダウンロード時に次の作品のダウンロードに移る際のダウンロード間隔をミリ秒で設定できます。\n\nYou can set the download interval in milliseconds when moving to the download of the next artwork during batch downloading."
+                    >[?]</a
+                  >
+                </p>
+
+                <a
+                  href="#"
+                  id="report"
+                  style="
+                    position: relative;
+                    z-index: 2000;
+                    font-size: 13px;
+                    background: linear-gradient(
+                      to top,
+                      #d1e3ff 0%,
+                      #ffffff 100%
+                    );
+                    display: block;
+                    border-radius: 10px;
+                    padding: 6px;
+                    width: calc(100% - 33px);
+                    margin: 11px;
+                    margin-left: 7px;
+                    text-decoration: none;
+                    text-align: center;
+                    color: #3e3e3e;
+                    border: 2px solid #8299bd;
+                  "
+                  >ご意見、ご要望、不具合報告はこちら<br />requests, bug reports
+                  here.</a
+                >
+              </div>
+              <div class="clear"></div>
+            </div>
+            <p></p>
+          </div>
+          <div class="footer-wrap">
+            <div class="footer-button-wrap">
+              <button class="save" locales="save">設定の保存</button>
+              <button class="back_setting" locales="back_setting">
+                前の設定へ
+              </button>
+              <!--<button class="reset" locales="reset" >初期化</button>-->
+            </div>
+          </div>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

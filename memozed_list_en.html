@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pixiv Downloader option</title>
+<link rel="stylesheet" href="op.css" type="text/css" />
+<link rel="stylesheet" href="memozed_list.css" type="text/css" />
+<script type="text/javascript" src="jq.js"></script>
+<script type="text/javascript" src="locales.js"></script>
+<script type="text/javascript" src="memozed_list.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="main">
+    
+    	<img src="logo.png" width="568" height="70" alt="Pixiv downloader" class="logo" /><span id="version"></span><br />
+    
+		<b>・How to Use</b><br><p style="color:#555;margin-left:12px;">
+		When you register a PixivID and a string in this list, the ?memoized-name? tag will be replaced with the registered text when downloading illustrations from that author.<br></p>
+		<b>・How to Confirm PixivID</b><br><p style="color:#555;margin-left:12px;">
+		To register, visit the user's homepage and input the <span style="color:red;">01234567</span> part from the URL https://www.pixiv.net/users/<span style="color:red;">01234567</span> into the PixivID field.<br></p><hr>    
+
+		<p style="color:#555;margin-left:12px;">
+		    PixivID:
+		    <input type="text" name="pid" id="pid"><br>
+		    Replacement String (tags can also be used):
+		    <input type="text" name="ptxt" id="ptxt">
+		    <input type="submit" id="subm" value="Register" >
+		</p>
+		<div id="list-view">
+
+		</div>
+
+		<p style="color:#555;background: #f9f9f9;padding: 10px;margin-right: 10px;margin-top:20px;">
+		    Replacement String for Unregistered IDs:<input type="text" name="deftxt" id="deftxt"><input type="submit" id="save" value="Save" >
+		</p>
+
+
+    </div>
+
+</div>
+</body>
+</html>
